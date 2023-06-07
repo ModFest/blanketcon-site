@@ -67,11 +67,11 @@ textarea {
    ========================================================================== */
 
 :root {
-	--blackpoint: #320A28;
-	--dark: #8F0056;
+	--blackpoint: #320A28; /*alternatively #220721*/
+	--dark: #8F0056; /*alternatively #7A0049*/
 	--mid: #D60053;
 	--light: #FF841F;
-	--whitepoint: #FFF5D6;
+	--whitepoint: #FFF5D6; /*alternatively #F9E5EA*/
 
 	--blackpoint-split: 50, 10, 40;
 	--dark-split: 143, 0, 86;
@@ -96,7 +96,7 @@ textarea {
 		--accent: var(--whitepoint);
 		--table: var(--blackpoint-split);
 		--thead: var(--dark-split);
-        --bg-gradient: linear-gradient(to bottom right, #ececec, #a9a9a9);
+        --bg-gradient: linear-gradient(to bottom right, #ececec, #c9c9c9);
 	}
 }
 
@@ -131,7 +131,6 @@ html {
 body {
 	box-sizing: border-box;
 	background: url("images/city.png") no-repeat center center fixed;
-    /* background-color: black; */
 	background-size: cover;
 	image-rendering: crisp-edges;
 	color: var(--text);

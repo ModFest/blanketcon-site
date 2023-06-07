@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+
+}
+
+html, body {
+    color: white;
+    font-family: 'Fredoka';
+    background: url("images/city.png") no-repeat center center fixed;
+	background-size: cover;
+	image-rendering: crisp-edges;
+}
+
+main {
+    margin: 3rem 0;
+    width: 100%;
+
+    > div {
+        width: fit-content;
+        margin-inline: auto;
+        max-width: min(calc(100vw - 3rem), 50rem);
+        min-width: min(calc(100vw - 3rem), 50rem);
+        display: grid;
+        grid-template: 
+        'logo logo'
+        'intro intro'
+        'featuring announcements';
+        gap: 3rem;
+        background-color: rgb(23, 23, 23);
+    }
+}
+.main-logo {
+    grid-area: logo;
+    width: fit-content;
+    margin-inline: auto;
+    position: relative;
+    margin-bottom: -6rem;
+
+    img {
+        transform: rotateZ(-2deg);
+        width: 30rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
+        background-color: rgb(86, 86, 86);
+    }
+
+    .chain1,
+    .chain2 {
+        position: absolute;
+        min-width: 1rem;
+        min-height: 5rem;
+        background-color: rgb(86, 86, 86);
+        top: -3rem;
+    }
+    .chain1 {
+        left: 2rem;
+    }
+
+    .chain2 {
+        right: 2rem;
+    }
+}
+
+a {
+    color: white;
+}
+
+.neon-card {
+    --color-base: #e84ea8;
+    --color-inner: #ff3c7d;
+    --color-outer: #c42b1a;
+    --color-trans: #3f1221;
+    padding: 2rem;
+    border: 5px solid var(--color-base);
+    border-radius: 1rem;
+    box-shadow: 0 0 0.2rem var(--color-base),
+                0 0 0.2rem var(--color-base),
+                0 0 2rem var(--color-inner),
+                0 0 0.8rem var(--color-outer),
+                0 0 2.8rem var(--color-outer),
+                inset 0 0 0.25rem var(--color-inner),
+                inset 0 0 1.5rem var(--color-outer);
+    background-color: rgb(23, 23, 23);
+    .glow,
+    h1,h2,h3
+    strong {
+        font-weight: 500;
+        color: white;
+        text-shadow: 0 0 0.1rem var(--color-base),
+            0 0 0.2rem var(--color-base),
+            0 0 1rem var(--color-inner),
+            0 0 0.6rem var(--color-outer),
+            0 0 1.5rem var(--color-outer);
+    }
+
+    button {
+        padding: 1rem 2rem;
+        margin-block: 0.5rem 1rem;
+        border: none;
+        border-radius: 1rem;
+        appearance: none;
+        background-color: var(--color-trans);
+        color: white;
+        font-family: 'Fredoka';
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 6px;
+        cursor: pointer;
+        box-shadow: 0 0 0.2rem var(--color-base),
+                    0 0 0.2rem var(--color-base),
+                    0 0 2rem var(--color-inner),
+                    0 0 0.8rem var(--color-outer),
+                    0 0 2.8rem var(--color-outer),
+                    inset 0.2rem 0.2rem 0.25rem rgba(255, 255, 255, 0.25),
+                    inset -0.2rem -0.2rem 0.25rem rgba(4, 4, 4, 0.5),
+                    inset 0 0 0.75rem var(--color-inner),
+                    inset 0 0 1.5rem var(--color-outer);
+        transition: transform 0.125s ease-out, filter 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
+        text-shadow: 0 0 0.75rem var(--color-inner);
+        outline-color: transparent;
+
+        &:hover {
+            transform: scale(1.025);
+            filter: brightness(1.2);
+        }
+
+        &:focus-visible, &:active {
+            transform: scale(1);
+        }
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    &.orange {
+        --color-base: #fff63f;
+        --color-inner: #ffaf3f;
+        --color-outer: #fb4c2d;
+        --color-trans: #5a1a0f;
+    }
+
+    &.blue {
+        --color-base: #60faff;
+        --color-inner: #3bc5f3;
+        --color-outer: #308dff;
+        --color-trans: #0d2645;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+
+    .date {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    .glow {
+        font-size: 1.5rem;
+    }
+}
+
+.intro {
+    grid-area: intro;
+}
+
+.featuring {
+    grid-area: featuring;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+@media (max-width:1025px) {
+    main > div {
+        display: flex;
+        flex-direction: column;
+    }
+}
