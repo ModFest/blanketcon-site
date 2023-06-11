@@ -18,7 +18,7 @@ main > div {
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
-  grid-template: "logo logo" "intro intro" "featuring announcements";
+  grid-template: "logo logo" "intro intro" "featuring announcements" "credits credits";
   gap: 3rem;
 }
 
@@ -112,6 +112,12 @@ a {
   --color-outer: #308dff;
   --color-trans: #0d2645;
 }
+.neon-card.green {
+  --color-base: #9BEC6D;
+  --color-inner: #84e84a;
+  --color-outer: #65e21d;
+  --color-trans: #1e4409;
+}
 .neon-card h2 {
   margin-top: 0;
 }
@@ -155,3 +161,12 @@ a {
 }
 
 /*# sourceMappingURL=styles.css.map */
+.credits {
+  grid-area: credits;
+}
+
+ul.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
