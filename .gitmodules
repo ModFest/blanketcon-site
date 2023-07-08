@@ -1,0 +1,3 @@
+[submodule "23/pack"]
+	path = 23/pack
+	url = https://github.com/ModFest/bc23-pack
