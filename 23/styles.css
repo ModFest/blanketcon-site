@@ -225,6 +225,24 @@ p {
 
 .featuring {
   grid-area: featuring;
+  padding: 2rem 2rem 2rem 2.5rem;
+}
+
+.featuring h2 {
+  margin-bottom: 0;
+}
+
+.featuring ul {
+  margin: 0.5rem 0;
+  padding: 0 0 0 0;
+}
+
+.featuring ul li {
+  margin: 0.5rem 0;
+}
+
+.featuring ul li sub {
+  line-height: 0.1rem;
 }
 
 .announcements {
