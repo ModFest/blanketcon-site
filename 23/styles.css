@@ -192,6 +192,15 @@ p {
   --color-trans: #1e4409;
 }
 
+.neon-card.purple {
+  --color-base: #c060dd;
+  --color-inner: #ac51a7;
+  --color-outer: #85276d;
+  --color-trans: #20121b;
+}
+
+
+
 .neon-card h2 {
   margin-top: 0;
 }
@@ -225,7 +234,7 @@ p {
 
 .featuring {
   grid-area: featuring;
-  padding: 2rem 2rem 2rem 2.5rem;
+  padding: 2rem
 }
 
 .featuring h2 {
@@ -233,7 +242,7 @@ p {
 }
 
 .featuring ul {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 1rem;
   padding: 0 0 0 0;
 }
 
