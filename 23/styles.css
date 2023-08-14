@@ -232,6 +232,16 @@ p {
   grid-area: intro;
 }
 
+.intro {
+  padding: 4rem 1.5rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 730px) {
+  .intro {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
+
 .featuring {
   grid-area: featuring;
   padding: 2rem
