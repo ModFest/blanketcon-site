@@ -43,8 +43,9 @@ main>div {
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
-  grid-template: "logo logo" "intro intro" "featuring schedule" "credits booths";
-  gap: 3rem;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "logo logo" "intro intro" "featuring schedule" "credits booths";
+  gap: 2rem;
 }
 
 .main-logo {
@@ -88,13 +89,13 @@ a {
 
 .neon-card {
   --color-base: #e84ea8;
-  --color-inner: #ff3c7d;
+  --color-inner: #ee3e79;
   --color-outer: #c42b1a;
-  --color-trans: #3f1221;
+  --color-trans: #271621;
   padding: 2rem;
   border: 5px solid var(--color-base);
   border-radius: 1rem;
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 2rem var(--color-inner), 0 0 0.8rem var(--color-outer), 0 0 2.8rem var(--color-outer), inset 0 0 0.25rem var(--color-inner), inset 0 0 1.5rem var(--color-outer);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
   background-color: rgb(23, 23, 23);
 }
 
@@ -103,24 +104,25 @@ a {
 .neon-card h2,
 .neon-card h3 strong {
   font-weight: 500;
+  letter-spacing: 2.5px;
   color: white;
-  text-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.6rem var(--color-outer), 0 0 1.5rem var(--color-outer);
+  text-shadow: 0 0 0.25rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 0.25rem var(--color-inner), 0 0 0.4rem var(--color-outer), 0 0 0.5rem var(--color-outer);
 }
 
 .neon-card button {
   padding: 1rem 2rem;
   margin-block: 0.5rem 1rem;
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   appearance: none;
   background-color: var(--color-trans);
   color: white;
   font-family: "Fredoka";
   font-weight: 700;
   font-size: 2rem;
-  letter-spacing: 6px;
+  letter-spacing: 2px;
   cursor: pointer;
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 2rem var(--color-inner), 0 0 0.8rem var(--color-outer), 0 0 2.8rem var(--color-outer), inset 0.1rem 0.1rem 0.25rem rgba(255, 255, 255, 0.25), inset -0.1rem -0.1rem 0.25rem rgba(4, 4, 4, 0.5), inset 0 0 0.75rem var(--color-inner), inset 0 0 1.5rem var(--color-outer);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
   transition: transform 0.125s ease-out, filter 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
   text-shadow: 0 0 0.75rem var(--color-inner);
   outline-color: transparent;
