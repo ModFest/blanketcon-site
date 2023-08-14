@@ -1,24 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
-html, body {
+
+html,
+body {
   /* background-color: rgb(23, 23, 23); */
   color: white;
   font-family: "Fredoka";
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Background class positioned independently from other elements */
+.background {
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background: url("images/city.png") no-repeat center center fixed;
-	background-size: cover;
-	image-rendering: crisp-edges;
+  background-size: cover;
+}
+
+/* Background blur & darken filter pseudoclass */
+.background::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px) sepia(0.3) brightness(70%);
+  pointer-events: none;
 }
 
 main {
   margin: 3rem 0;
   width: 100%;
 }
-main > div {
+
+main>div {
   width: fit-content;
   margin-inline: auto;
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
-  grid-template: "logo logo" "intro intro" "featuring announcements" "credits credits";
+  grid-template: "logo logo" "intro intro" "featuring schedule" "credits booths";
   gap: 3rem;
 }
 
@@ -29,6 +52,7 @@ main > div {
   position: relative;
   margin-bottom: -6rem;
 }
+
 .main-logo img {
   transform: rotateZ(-2deg);
   width: 30rem;
@@ -36,6 +60,7 @@ main > div {
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
   background-color: rgb(86, 86, 86);
 }
+
 .main-logo .chain1,
 .main-logo .chain2 {
   position: absolute;
@@ -44,9 +69,11 @@ main > div {
   background-color: rgb(86, 86, 86);
   top: -3rem;
 }
+
 .main-logo .chain1 {
   left: 2rem;
 }
+
 .main-logo .chain2 {
   right: 2rem;
 }
@@ -66,12 +93,16 @@ a {
   box-shadow: 0 0 0.2rem var(--color-base), 0 0 0.2rem var(--color-base), 0 0 2rem var(--color-inner), 0 0 0.8rem var(--color-outer), 0 0 2.8rem var(--color-outer), inset 0 0 0.25rem var(--color-inner), inset 0 0 1.5rem var(--color-outer);
   background-color: rgb(23, 23, 23);
 }
+
 .neon-card .glow,
-.neon-card h1, .neon-card h2, .neon-card h3 strong {
+.neon-card h1,
+.neon-card h2,
+.neon-card h3 strong {
   font-weight: 500;
   color: white;
   text-shadow: 0 0 0.1rem var(--color-base), 0 0 0.2rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.6rem var(--color-outer), 0 0 1.5rem var(--color-outer);
 }
+
 .neon-card button {
   padding: 1rem 2rem;
   margin-block: 0.5rem 1rem;
@@ -90,34 +121,42 @@ a {
   text-shadow: 0 0 0.75rem var(--color-inner);
   outline-color: transparent;
 }
+
 .neon-card button:hover {
   transform: scale(1.025);
   filter: brightness(1.2);
 }
-.neon-card button:focus-visible, .neon-card button:active {
+
+.neon-card button:focus-visible,
+.neon-card button:active {
   transform: scale(1);
 }
+
 .neon-card .center {
   text-align: center;
 }
+
 .neon-card.orange {
   --color-base: #fff63f;
   --color-inner: #ffaf3f;
   --color-outer: #fb4c2d;
   --color-trans: #5a1a0f;
 }
+
 .neon-card.blue {
   --color-base: #60faff;
   --color-inner: #3bc5f3;
   --color-outer: #308dff;
   --color-trans: #0d2645;
 }
+
 .neon-card.green {
   --color-base: #9BEC6D;
   --color-inner: #84e84a;
   --color-outer: #65e21d;
   --color-trans: #1e4409;
 }
+
 .neon-card h2 {
   margin-top: 0;
 }
@@ -126,17 +165,21 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
 .dates .date {
   padding: 1rem;
   display: flex;
   flex-direction: column;
 }
+
 .dates .date:first-child {
   text-align: left;
 }
+
 .dates .date:last-child {
   text-align: right;
 }
+
 .dates .glow {
   font-size: 1.5rem;
 }
@@ -154,7 +197,7 @@ a {
 }
 
 @media (max-width: 1025px) {
-  main > div {
+  main>div {
     display: flex;
     flex-direction: column;
   }
@@ -166,7 +209,7 @@ a {
 }
 
 ul.no-bullets {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
