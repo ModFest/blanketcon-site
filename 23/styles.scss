@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
 
-:root {
+:root {}
 
-}
-
-html, body {
+html,
+body {
     color: white;
     font-family: 'Fredoka';
     background: url("images/city.png") no-repeat center center fixed;
-	background-size: cover;
-	image-rendering: crisp-edges;
+    background-size: cover;
+    image-rendering: crisp-edges;
 }
 
 main {
     margin: 3rem 0;
     width: 100%;
 
-    > div {
+    >div {
         width: fit-content;
         margin-inline: auto;
         max-width: min(calc(100vw - 3rem), 50rem);
         min-width: min(calc(100vw - 3rem), 50rem);
         display: grid;
-        grid-template: 
-        'logo logo'
-        'intro intro'
-        'featuring announcements';
+        grid-template:
+            'logo logo'
+            'intro intro'
+            'featuring announcements';
         gap: 3rem;
         background-color: rgb(23, 23, 23);
     }
 }
+
 .main-logo {
     grid-area: logo;
     width: fit-content;
@@ -53,6 +53,7 @@ main {
         background-color: rgb(86, 86, 86);
         top: -3rem;
     }
+
     .chain1 {
         left: 2rem;
     }
@@ -74,21 +75,23 @@ a {
     padding: 2rem;
     border: 5px solid var(--color-base);
     border-radius: 1rem;
-    box-shadow: 0 0 0.2rem var(--color-base),
-                0 0 0.2rem var(--color-base),
-                0 0 2rem var(--color-inner),
-                0 0 0.8rem var(--color-outer),
-                0 0 2.8rem var(--color-outer),
-                inset 0 0 0.25rem var(--color-inner),
-                inset 0 0 1.5rem var(--color-outer);
+    box-shadow: 0 0 0.1rem var(--color-base),
+        0 0 0.1rem var(--color-base),
+        0 0 2rem var(--color-inner),
+        0 0 0.8rem var(--color-outer),
+        0 0 2.8rem var(--color-outer),
+        inset 0 0 0.25rem var(--color-inner),
+        inset 0 0 1.5rem var(--color-outer);
     background-color: rgb(23, 23, 23);
+
     .glow,
-    h1,h2,h3
-    strong {
+    h1,
+    h2,
+    h3 strong {
         font-weight: 500;
         color: white;
         text-shadow: 0 0 0.1rem var(--color-base),
-            0 0 0.2rem var(--color-base),
+            0 0 0.1rem var(--color-base),
             0 0 1rem var(--color-inner),
             0 0 0.6rem var(--color-outer),
             0 0 1.5rem var(--color-outer);
@@ -107,15 +110,15 @@ a {
         font-size: 2rem;
         letter-spacing: 6px;
         cursor: pointer;
-        box-shadow: 0 0 0.2rem var(--color-base),
-                    0 0 0.2rem var(--color-base),
-                    0 0 2rem var(--color-inner),
-                    0 0 0.8rem var(--color-outer),
-                    0 0 2.8rem var(--color-outer),
-                    inset 0.2rem 0.2rem 0.25rem rgba(255, 255, 255, 0.25),
-                    inset -0.2rem -0.2rem 0.25rem rgba(4, 4, 4, 0.5),
-                    inset 0 0 0.75rem var(--color-inner),
-                    inset 0 0 1.5rem var(--color-outer);
+        box-shadow: 0 0 0.1rem var(--color-base),
+            0 0 0.1rem var(--color-base),
+            0 0 2rem var(--color-inner),
+            0 0 0.8rem var(--color-outer),
+            0 0 2.8rem var(--color-outer),
+            inset 0.1rem 0.1rem 0.25rem rgba(255, 255, 255, 0.25),
+            inset -0.1rem -0.1rem 0.25rem rgba(4, 4, 4, 0.5),
+            inset 0 0 0.75rem var(--color-inner),
+            inset 0 0 1.5rem var(--color-outer);
         transition: transform 0.125s ease-out, filter 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
         text-shadow: 0 0 0.75rem var(--color-inner);
         outline-color: transparent;
@@ -125,7 +128,8 @@ a {
             filter: brightness(1.2);
         }
 
-        &:focus-visible, &:active {
+        &:focus-visible,
+        &:active {
             transform: scale(1);
         }
     }
@@ -189,7 +193,7 @@ a {
 }
 
 @media (max-width:1025px) {
-    main > div {
+    main>div {
         display: flex;
         flex-direction: column;
     }
