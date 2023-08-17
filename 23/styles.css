@@ -52,9 +52,9 @@ main>div {
 
 .main-logo {
   grid-area: logo;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 88vw;
 
+  height: 20vh;
   margin-inline: auto;
   position: relative;
   margin-bottom: -6rem;
@@ -62,8 +62,8 @@ main>div {
 
 .main-logo img {
   transform: rotateZ(-2deg);
-  width: 30rem;
-  border-radius: 2rem;
+  width: 100%;
+  border-radius: 6.5vw;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
   background-color: rgb(86, 86, 86);
 }
@@ -83,6 +83,18 @@ main>div {
 
 .main-logo .chain2 {
   right: 2rem;
+}
+
+@media (min-width:520px) {
+  .main-logo {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .main-logo img {
+    width: 30rem;
+    border-radius: 2rem;
+  }
 }
 
 a {
