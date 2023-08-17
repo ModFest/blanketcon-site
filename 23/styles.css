@@ -45,7 +45,7 @@ main>div {
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-areas: "logo logo" "intro intro" "featuring schedule" "credits booths";
+  grid-template-areas: "logo logo" "intro intro" "featuring info" "credits booths";
   gap: 2rem;
 }
 
@@ -98,7 +98,7 @@ p {
   --color-outer: #c42b1a;
   --color-trans: #271621;
   padding: 2rem;
-  border: 5px solid var(--color-base);
+  border: 3px solid var(--color-base);
   border-radius: 1rem;
   box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
   background-color: rgb(23, 23, 23);
@@ -128,12 +128,11 @@ p {
   border-radius: 0.75rem;
   background-color: var(--color-trans);
 
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 0.1rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
   transition: transform 0.125s ease-out, filter 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
   text-shadow: 0 0 0.75rem var(--color-inner);
   outline-color: transparent;
   text-decoration: none;
-
 }
 
 .neon-card .discord-link img {
@@ -184,6 +183,7 @@ p {
   --color-inner: #3bc5f3;
   --color-outer: #308dff;
   --color-trans: #0d2645;
+
 }
 
 .neon-card.green {
@@ -248,8 +248,8 @@ p {
   padding: 2rem
 }
 
-.featuring h2 {
-  margin-bottom: 0;
+h2 {
+  margin-bottom: 0.5rem;
 }
 
 .featuring ul {
@@ -310,22 +310,40 @@ table .dayhead {
 
 
 input.modal-button {
+  width: 100%;
   bottom: 0;
   background-color: #0000;
   color: #fff;
 
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1em;
+  letter-spacing: 1.3px;
 
   margin: 1em 0;
   padding: .5em 1em;
-  border-radius: 1em;
-
+  border-radius: 0.5em;
   cursor: pointer;
 
-  border: 1px solid var(--color-base);
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.1rem var(--color-outer), 0 0 0.8rem var(--color-outer), inset 0 0 0.1rem var(--color-inner), inset 0 0 .8rem var(--color-outer);
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--color-trans);
+
+  transition: transform 0.125s ease-out, filter 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
+  text-shadow: 0 0 0.25rem var(--color-inner);
+  outline-color: transparent;
+  outline: 2px solid rgb(50, 139, 255);
+  text-decoration: none;
+}
+
+input.modal-button:hover {
+  transform: scale(1.015);
+  filter: brightness(1.2);
+}
+
+input.modal-button:focus-visible,
+input.modal-button:active {
+  transform: scale(1);
 }
 
 dialog {
