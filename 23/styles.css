@@ -114,7 +114,7 @@ p {
   padding: 2rem;
   border: 3px solid var(--color-base);
   border-radius: 1rem;
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
+  box-shadow: 0 0 1rem var(--color-base), 0 0 0.1rem var(--color-outer), 0 0 0.5rem inset var(--color-inner);
   background-color: rgb(23, 23, 23);
 }
 
