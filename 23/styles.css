@@ -158,6 +158,21 @@ p {
 
 }
 
+@media (max-width:520px) {
+  .neon-card .discord-link {
+    aspect-ratio: 1/1;
+    padding: 0.25rem;
+  }
+
+  .neon-card .discord-link img {
+    margin: 0;
+  }
+
+  .neon-card .discord-link div {
+    display: none;
+  }
+}
+
 .neon-card .discord-link:hover {
   transform: scale(1.025);
   filter: brightness(1.2);
