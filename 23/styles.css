@@ -43,7 +43,7 @@ main>div {
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "logo logo" "intro intro" "featuring schedule" "credits booths";
   gap: 2rem;
 }
@@ -284,4 +284,84 @@ ul.no-bullets {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+table {
+  overflow-y: scroll;
+
+  & th {
+    text-align: left;
+  }
+
+  & th,
+  td {
+    padding: 0 .2em;
+  }
+}
+
+dialog {
+  background-color: rgb(23, 23, 23);
+  color: white;
+  border: 2px;
+  overscroll-behavior: none;
+}
+
+dialog .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+dialog>.header>h2 {
+  margin: 0;
+}
+
+input.modal-button {
+  font-family: inherit;
+
+}
+
+input.close-button {
+  background-color: #0000;
+  color: #fff;
+
+  border-radius: 5em;
+  display: block;
+  margin: 0;
+  width: 3em;
+  height: 3em;
+
+  cursor: pointer;
+
+  --color-base: #e84ea8;
+  --color-inner: #ee3e79;
+  --color-outer: #c42b1a;
+  --color-trans: #271621;
+  border: 3px solid var(--color-base);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
+  text-align: center;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px) brightness(.7);
+}
+
+:modal {
+  /* margin: 2em auto; */
+  max-height: calc(100vh - 8em);
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  height: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
 }
