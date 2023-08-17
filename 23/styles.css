@@ -400,3 +400,7 @@ dialog::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 5px;
 }
+
+.js-on {
+  display: none;
+}
