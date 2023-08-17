@@ -7,6 +7,7 @@ body {
   font-family: "Fredoka";
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  color-scheme: dark;
 }
 
 /* Background class positioned independently from other elements */
@@ -43,7 +44,7 @@ main>div {
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "logo logo" "intro intro" "featuring schedule" "credits booths";
   gap: 2rem;
 }
@@ -284,4 +285,118 @@ ul.no-bullets {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+table th {
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: .2em .5em;
+  /* border: 2px solid red; */
+  margin: .1em;
+  border-radius: .2em;
+}
+
+table tr:nth-of-type(2n+1) {
+  background-color: #aaa1;
+}
+
+table .dayhead {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+input.modal-button {
+  bottom: 0;
+  background-color: #0000;
+  color: #fff;
+
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1em;
+
+  margin: 1em 0;
+  padding: .5em 1em;
+  border-radius: 1em;
+
+  cursor: pointer;
+
+  border: 1px solid var(--color-base);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.1rem var(--color-outer), 0 0 0.8rem var(--color-outer), inset 0 0 0.1rem var(--color-inner), inset 0 0 .8rem var(--color-outer);
+}
+
+dialog {
+  background-color: rgb(23, 23, 23);
+  color: white;
+
+  border: 2px;
+  max-height: calc(100vh - 8em);
+
+  overscroll-behavior: none;
+  /* overflow: hidden; */
+
+  flex-direction: column;
+}
+
+dialog[open] {
+  display: flex;
+}
+
+dialog .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+dialog>.header>h2 {
+  margin: 0;
+}
+
+dialog>.content {
+  overflow: auto;
+  /* height: 100vh; */
+  /* display: flex; */
+}
+
+input.close-button {
+  background-color: #0000;
+  color: #fff;
+
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1em;
+
+  border-radius: 5em;
+  display: block;
+  margin: 0;
+  width: 2.3em;
+  height: 2.3em;
+
+  cursor: pointer;
+
+  border: 3px solid var(--color-base);
+  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
+  text-align: center;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px) brightness(.7);
+}
+
+dialog::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+dialog::-webkit-scrollbar-button {
+  height: 1em;
+}
+
+dialog::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
 }
