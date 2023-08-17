@@ -47,7 +47,7 @@ main>div {
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-areas: "logo logo" "intro intro" "featuring info" "credits booths";
+  grid-template-areas: "logo logo" "intro intro" "featuring info" "credits credits";
   gap: 2rem;
 }
 
@@ -298,16 +298,39 @@ h2 {
   grid-area: announcements;
 }
 
-@media (max-width: 1025px) {
+/*# sourceMappingURL=styles.css.map */
+.credits {
+  grid-area: credits;
+  display: flex;
+  flex-direction: column;
+}
+
+.credits>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 650px) {
   main>div {
     display: flex;
     flex-direction: column;
   }
+
+  .credits>div {
+    flex-direction: column;
+  }
+
+  .modfest-credit {
+    margin: 3rem auto;
+  }
 }
 
-/*# sourceMappingURL=styles.css.map */
-.credits {
-  grid-area: credits;
+.modfest-credit {
+  color: rgb(175, 175, 175);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem auto 0 auto;
 }
 
 ul.no-bullets {
