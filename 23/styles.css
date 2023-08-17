@@ -38,8 +38,8 @@ main {
 }
 
 main>div {
-  width: fit-content;
   width: -moz-fit-content;
+  width: fit-content;
 
   margin-inline: auto;
   max-width: min(100vw - 3rem, 50rem);
@@ -52,8 +52,8 @@ main>div {
 
 .main-logo {
   grid-area: logo;
-  width: fit-content;
   width: -moz-fit-content;
+  width: fit-content;
 
   margin-inline: auto;
   position: relative;
