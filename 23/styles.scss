@@ -32,7 +32,8 @@ main {
 
 .main-logo {
     grid-area: logo;
-    width: fit-content;
+    width: 100px;
+
     margin-inline: auto;
     position: relative;
     margin-bottom: -6rem;

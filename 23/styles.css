@@ -12,7 +12,7 @@ body {
 }
 
 /* Background class positioned independently from other elements */
-.background {
+.main-backdrop {
   z-index: -1;
   position: fixed;
   inset: 0;
@@ -20,10 +20,11 @@ body {
   height: 100%;
   background: url("images/city.png") no-repeat center center fixed;
   background-size: cover;
+  scale: 1.05;
 }
 
 /* Background blur & darken filter pseudoclass */
-.background::after {
+.main-backdrop::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -38,23 +39,23 @@ main {
 }
 
 main>div {
-  width: fit-content;
   width: -moz-fit-content;
+  width: fit-content;
 
   margin-inline: auto;
   max-width: min(100vw - 3rem, 50rem);
   min-width: min(100vw - 3rem, 50rem);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-areas: "logo logo" "intro intro" "featuring info" "credits booths";
+  grid-template-areas: "logo logo" "intro intro" "featuring info" "credits credits";
   gap: 2rem;
 }
 
 .main-logo {
   grid-area: logo;
-  width: fit-content;
-  width: -moz-fit-content;
+  width: 88vw;
 
+  height: 20vh;
   margin-inline: auto;
   position: relative;
   margin-bottom: -6rem;
@@ -62,8 +63,8 @@ main>div {
 
 .main-logo img {
   transform: rotateZ(-2deg);
-  width: 30rem;
-  border-radius: 2rem;
+  width: 100%;
+  border-radius: 6.5vw;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
   background-color: rgb(86, 86, 86);
 }
@@ -85,6 +86,18 @@ main>div {
   right: 2rem;
 }
 
+@media (min-width:520px) {
+  .main-logo {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .main-logo img {
+    width: 30rem;
+    border-radius: 2rem;
+  }
+}
+
 a {
   color: white;
 }
@@ -101,7 +114,7 @@ p {
   padding: 2rem;
   border: 3px solid var(--color-base);
   border-radius: 1rem;
-  box-shadow: 0 0 0.1rem var(--color-base), 0 0 0.1rem var(--color-base), 0 0 1rem var(--color-inner), 0 0 0.5rem var(--color-outer), 0 0 1.8rem var(--color-outer), inset 0 0 0.15rem var(--color-inner), inset 0 0 1rem var(--color-outer);
+  box-shadow: 0 0 1rem var(--color-base), 0 0 0.1rem var(--color-outer), 0 0 0.5rem inset var(--color-inner);
   background-color: rgb(23, 23, 23);
 }
 
@@ -156,6 +169,21 @@ p {
   color: white;
   cursor: pointer;
 
+}
+
+@media (max-width:520px) {
+  .neon-card .discord-link {
+    aspect-ratio: 1/1;
+    padding: 0.25rem;
+  }
+
+  .neon-card .discord-link img {
+    margin: 0;
+  }
+
+  .neon-card .discord-link div {
+    display: none;
+  }
 }
 
 .neon-card .discord-link:hover {
@@ -270,16 +298,39 @@ h2 {
   grid-area: announcements;
 }
 
-@media (max-width: 1025px) {
+/*# sourceMappingURL=styles.css.map */
+.credits {
+  grid-area: credits;
+  display: flex;
+  flex-direction: column;
+}
+
+.credits>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 650px) {
   main>div {
     display: flex;
     flex-direction: column;
   }
+
+  .credits>div {
+    flex-direction: column;
+  }
+
+  .modfest-credit {
+    margin: 3rem auto;
+  }
 }
 
-/*# sourceMappingURL=styles.css.map */
-.credits {
-  grid-area: credits;
+.modfest-credit {
+  color: rgb(175, 175, 175);
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2rem auto 0 auto;
 }
 
 ul.no-bullets {
@@ -352,14 +403,17 @@ table .dayhead {
 }
 
 dialog {
+  padding: 0 1.5rem 1.5rem 1.5rem;
   background-color: rgb(23, 23, 23);
   color: white;
 
-  border: 2px;
+  border: 4px solid rgb(11, 11, 11);
+  filter: drop-shadow(0px 0px 50px rgba(46, 120, 231, 0.2));
+  border-radius: 0.75rem;
   max-height: calc(100vh - 8em);
 
   overscroll-behavior: none;
-  /* overflow: hidden; */
+  overflow: hidden;
 
   flex-direction: column;
 
@@ -371,10 +425,14 @@ dialog[open] {
 }
 
 dialog .header {
+  position: sticky;
+  top: 0;
+  border: 2px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
+  padding: 1rem 0;
 }
 
 dialog>.header>h2 {
@@ -387,8 +445,14 @@ dialog>.content {
   /* display: flex; */
 }
 
+@media (max-width:520px) {
+  dialog {
+    width: 80%;
+  }
+}
+
 input.close-button {
-  background-color: #0000;
+  background-color: #333333;
   color: #fff;
 
   font-weight: bold;
@@ -408,8 +472,12 @@ input.close-button {
   text-align: center;
 }
 
+input.close-button:hover {
+  background-color: #444444;
+}
+
 dialog::backdrop {
-  backdrop-filter: blur(5px) brightness(.7);
+  backdrop-filter: blur(5px) brightness(.5);
 }
 
 dialog::-webkit-scrollbar {
@@ -425,6 +493,51 @@ dialog::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 5px;
 }
+
+.table-scroller {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Table header */
+thead {
+  background-color: rgb(5, 5, 5) !important;
+  position: sticky;
+  top: 0;
+}
+
+/* Table header bottom border */
+thead::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+/* Row which ontains both header child elements */
+thead tr {
+  background-color: none !important;
+}
+
+thead tr:hover {
+  cursor: pointer;
+}
+
+/* Individual child elements */
+thead tr th {
+  border-radius: 0px;
+  transition: 0.05s ease;
+}
+
+thead tr th:hover {
+  background: rgb(50, 50, 50);
+}
+
+table {
+  border-collapse: collapse;
+
+}
+
 
 .js-on {
   display: none;
