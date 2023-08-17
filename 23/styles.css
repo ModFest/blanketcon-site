@@ -7,6 +7,7 @@ body {
   font-family: "Fredoka";
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  color-scheme: dark;
 }
 
 /* Background class positioned independently from other elements */
