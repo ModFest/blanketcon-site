@@ -8,6 +8,7 @@ body {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 /* Background class positioned independently from other elements */
@@ -309,7 +310,11 @@ table .dayhead {
 }
 
 
-input.modal-button {
+.modal-button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+
   width: 100%;
   bottom: 0;
   background-color: #0000;
@@ -336,13 +341,13 @@ input.modal-button {
   text-decoration: none;
 }
 
-input.modal-button:hover {
+.modal-button:hover {
   transform: scale(1.015);
   filter: brightness(1.2);
 }
 
-input.modal-button:focus-visible,
-input.modal-button:active {
+.modal-button:focus-visible,
+.modal-button:active {
   transform: scale(1);
 }
 
@@ -357,6 +362,8 @@ dialog {
   /* overflow: hidden; */
 
   flex-direction: column;
+
+  scroll-margin-top: 4em;
 }
 
 dialog[open] {
@@ -417,4 +424,8 @@ dialog::-webkit-scrollbar-button {
 dialog::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 5px;
+}
+
+.js-on {
+  display: none;
 }
