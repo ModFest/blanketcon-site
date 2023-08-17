@@ -123,10 +123,7 @@
       <div class="booths neon-card green">
         <h2>Booths</h2>
         <p>
-          (some brief keypoints about the booths (?))<br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil cum recusandae modi impedit magnam, in
-          perferendis cupiditate alias odit nam ratione, quo laudantium placeat minus. Non sed eaque necessitatibus
-          assumenda.
+          (some brief keypoints about the booths (?))
         </p>
         <input type="button" class="modal-button" value="Show Booths"
           onclick="document.getElementById('boothsDialog').showModal()">
@@ -162,58 +159,58 @@
 
 </body>
 
-<dialog id="scheduleDialog" class="modal neon-card">
+<dialog id="scheduleDialog" class="modal neon-card blue">
   <div class="header">
     <h2>Schedule</h2>
     <input type="button" value="X" class="close-button" onclick="document.getElementById('scheduleDialog').close()">
   </div>
   <table>
-    <thead>
-      <tr>
-        <th>Event</th>
-        <th>Type</th>
-        <th>Location</th>
-        <th>Time <span class="timezone">(UTC)</span></th>
-        <th>Hosts</th>
-        <th>Summary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Server Launch</td>
-        <td></td>
-        <td></td>
-        <td><time datetime="2023-08-25T18:00:00.000Z">8/25/23, 6:00 PM</time></td>
-        <td></td>
-        <td>Time to join in the world as we prepare the opening ceremony!</td>
-      </tr>
-      <tr>
-        <td>Opening Ceremony</td>
-        <td>Ceremony</td>
-        <td>Main Stage</td>
-        <td><time datetime="2023-08-25T19:00:00.000Z">8/25/23, 7:00 PM</time></td>
-        <td>TBD</td>
-        <td>Come kick BlanketCon off with us as we say a few words about the community!</td>
-      </tr>
-      <tr>
-        <td colspan="6" class="dayhead">Day 1</td>
-      </tr>
-    </tbody>
+    <!-- <thead> -->
+    <tr>
+      <th>Event</th>
+      <th>Type</th>
+      <th>Location</th>
+      <th>Time <span class="timezone">(UTC)</span></th>
+      <th>Hosts</th>
+      <th>Summary</th>
+    </tr>
+    <!-- </thead> -->
+    <!-- <tbody> -->
+    <tr>
+      <td>Server Launch</td>
+      <td></td>
+      <td></td>
+      <td><time datetime="2023-08-25T18:00:00.000Z">8/25/23, 6:00 PM</time></td>
+      <td></td>
+      <td>Time to join in the world as we prepare the opening ceremony!</td>
+    </tr>
+    <tr>
+      <td>Opening Ceremony</td>
+      <td>Ceremony</td>
+      <td>Main Stage</td>
+      <td><time datetime="2023-08-25T19:00:00.000Z">8/25/23, 7:00 PM</time></td>
+      <td>TBD</td>
+      <td>Come kick BlanketCon off with us as we say a few words about the community!</td>
+    </tr>
+    <tr>
+      <td colspan="6" class="dayhead">Day 1</td>
+    </tr>
+    <!-- </tbody> -->
   </table>
 </dialog>
 
-<dialog id="boothsDialog" class="modal neon-card">
+<dialog id="boothsDialog" class="modal neon-card green">
   <div class="header">
     <h2>Booths</h2>
     <input type="button" value="X" class="close-button" onclick="document.getElementById('boothsDialog').close()">
   </div>
-  <table border="0" cellpadding="0" cellspacing="0" id="sheet0">
+  <table>
     <tr>
       <th>
-        <h3>Author</h3>
+        Author
       </th>
       <th>
-        <h3>Mod</h3>
+        Mod
       </th>
     </tr>
     <tr>
