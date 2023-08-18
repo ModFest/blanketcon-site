@@ -418,6 +418,10 @@ dialog {
   flex-direction: column;
 
   scroll-margin-top: 4em;
+
+  max-width: min(100vw - 3rem, 50rem);
+  /* min-width: min(100vw - 3rem, 50rem); */
+  box-sizing: border-box;
 }
 
 dialog[open] {
@@ -519,7 +523,7 @@ thead tr {
   background-color: none !important;
 }
 
-thead tr:hover {
+table.sortable thead tr:hover {
   cursor: pointer;
 }
 
@@ -529,7 +533,7 @@ thead tr th {
   transition: 0.05s ease;
 }
 
-thead tr th:hover {
+table.sortable thead tr th:hover {
   background: rgb(50, 50, 50);
 }
 
