@@ -626,3 +626,11 @@ table {
 .js-on {
   display: none;
 }
+
+html:has(dialog[open]:modal) {
+  overflow: hidden;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
