@@ -98,6 +98,22 @@ main>div {
   }
 }
 
+.classic-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 64vw;
+  transform: rotateZ(-3deg);
+  font-size: 3vw;
+}
+
+@media (min-width:520px) {
+  .classic-link {
+    font-size: medium;
+    top: 1rem;
+    left: 21.5rem;
+  }
+}
+
 a {
   color: white;
 }
