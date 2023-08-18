@@ -516,6 +516,7 @@ thead {
   background-color: rgb(5, 5, 5) !important;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 /* Table header bottom border */
@@ -547,11 +548,6 @@ table.sortable thead tr th:hover {
 
 table {
   border-collapse: collapse;
-
-}
-
-#scheduleDialog {
-  margin: auto 3rem;
 }
 
 .dayhead {
