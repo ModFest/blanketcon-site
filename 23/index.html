@@ -83,14 +83,22 @@
 
 <body>
   <div class="main-backdrop"></div>
-  <div class="music-player"></div>
+  <div class="music-player" title="Play background music">
+    <button id="toggle_music" type="button" onclick="toggleMusic()">
+      <!-- <span class="audio-error">Audio unavailable. Maybe you have JS disabled?</span> -->
+      <span class="audio-button visible" id="audio-start"><img src="./images/speaker_icon.svg"
+          alt="Start audio button"></span>
+      <span class="audio-button" id="audio-play"><img src="./images/start_icon.svg" alt="Play audio button"></span>
+      <span class="audio-button" id="audio-pause"><img src="./images/stop_icon.svg" alt="Pause audio button"></span>
+    </button>
+  </div>
   <main>
     <div>
       <div class="main-logo">
         <div class="chain1"></div>
         <div class="chain2"></div>
         <img src="./images/logo.png" alt="BC23 logo">
-        <div class="classic-link"><a href="./classic.html">Classic Site</a></div>
+        <div class="classic-link"><a href="./classic.html#" title="Visit classic version of site">Classic Site</a></div>
       </div>
       <div class="intro neon-card">
         <div class="dates">
@@ -110,7 +118,8 @@
           </div>
         </div>
         <div class="center">
-          <a href="https://discord.modfest.net" target="_blank" class="discord-link">
+          <a href="https://discord.modfest.net" target="_blank" class="discord-link"
+            title="Join ModFest Discord server">
             <img src="./images/discord-mark-white.svg" alt="discord logo">
             <div>JOIN OUR DISCORD</div>
           </a>
@@ -143,7 +152,7 @@
         <p>
           View the schedule for mod developer presentations
         </p>
-        <input type="button" class="modal-button js-on" value="View Schedule"
+        <input type="button" class="modal-button js-on" value="View Schedule" title="View event schedule"
           onclick="document.getElementById('scheduleDialog').showModal()">
         <noscript>
           <a href="#scheduleDialog" class="modal-button">Go to Schedule</a>
@@ -152,7 +161,7 @@
         <p>
           See all the booths at BlanketCon this year
         </p>
-        <input type="button" class="modal-button js-on" value="Show Booths"
+        <input type="button" class="modal-button js-on" value="Show Booths" title="View list of booths"
           onclick="document.getElementById('boothsDialog').showModal()">
         <noscript>
           <a href="#boothsDialog" class="modal-button">Go to Booths</a>
@@ -991,11 +1000,50 @@
     </dialog>
   </div>
 
+  <audio autoplay="false" id="bgm" loop="loop">
+    <source src="audio/anarchy.mp3">
+  </audio>
   <script>
     let elem
     while (elem = document.querySelector(".js-on")) {
       elem.classList.remove("js-on")
     }
+
+    const audio = document.getElementById("bgm");
+    const toggle_btn = document.getElementById("toggle_music");
+
+    const start_btn = document.getElementById("audio-start");
+    const play_btn = document.getElementById("audio-play");
+    const pause_btn = document.getElementById("audio-pause");
+
+    let isPlaying = false;
+
+    //sanity-check!
+    audio.pause();
+
+    // toggle_btn.innerHTML = "";
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        play_btn.classList.add("visible");
+        pause_btn.classList.remove("visible");
+        start_btn.classList.remove("visible");
+      } else {
+        audio.play();
+        play_btn.classList.remove("visible");
+        pause_btn.classList.add("visible");
+        start_btn.classList.remove("visible");
+      }
+    }
+
+    audio.onplay = function () {
+      isPlaying = true;
+    };
+
+    audio.onpause = function () {
+      isPlaying = false;
+    };
   </script>
 </body>
 
