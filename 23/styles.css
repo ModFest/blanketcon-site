@@ -567,8 +567,8 @@ table {
 .music-player {
   position: fixed;
   inset: auto auto 1rem 1rem;
-  width: 48px;
-  aspect-ratio: 1/1;
+  /* max-width: 100px; */
+  /* aspect-ratio: 1/1; */
 
   display: flex;
   justify-content: center;
@@ -578,7 +578,7 @@ table {
 
 }
 
-.music-player:hover {
+.music-player button:hover {
   transform: scale(1.1);
 }
 
