@@ -54,6 +54,7 @@ main>div {
   border-radius: 6.5vw;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
   background-color: rgb(86, 86, 86);
+  aspect-ratio: 1080/379;
 }
 
 .main-logo .chain1,
