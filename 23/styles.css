@@ -2,7 +2,6 @@
 
 html,
 body {
-  /* background-color: rgb(23, 23, 23); */
   color: white;
   font-family: "Fredoka";
   image-rendering: -webkit-optimize-contrast;
@@ -350,7 +349,6 @@ table th {
 table th,
 table td {
   padding: .2em .5em;
-  /* border: 2px solid red; */
   margin: .1em;
   border-radius: .2em;
 }
@@ -447,8 +445,6 @@ dialog>.header>h2 {
 
 dialog>.content {
   overflow: auto;
-  /* height: 100vh; */
-  /* display: flex; */
 }
 
 input.close-button {
