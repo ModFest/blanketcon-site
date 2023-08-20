@@ -2,9 +2,8 @@
 
 html,
 body {
-  /* background-color: rgb(23, 23, 23); */
   color: white;
-  font-family: "Fredoka";
+  font-family: "Fredoka", sans-serif;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   color-scheme: dark;
@@ -18,7 +17,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  background: url("images/city_blur.png") no-repeat center center fixed;
+  background: url("images/city_blur.webp") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -44,7 +43,6 @@ main>div {
   grid-area: logo;
   width: 88vw;
 
-  height: 20vh;
   margin-inline: auto;
   position: relative;
   margin-bottom: -6rem;
@@ -56,6 +54,7 @@ main>div {
   border-radius: 6.5vw;
   box-shadow: 0 0 3rem rgba(0, 0, 0, 0.301);
   background-color: rgb(86, 86, 86);
+  aspect-ratio: 1080/379;
 }
 
 .main-logo .chain1,
@@ -351,7 +350,6 @@ table th {
 table th,
 table td {
   padding: .2em .5em;
-  /* border: 2px solid red; */
   margin: .1em;
   border-radius: .2em;
 }
@@ -448,8 +446,6 @@ dialog>.header>h2 {
 
 dialog>.content {
   overflow: auto;
-  /* height: 100vh; */
-  /* display: flex; */
 }
 
 input.close-button {

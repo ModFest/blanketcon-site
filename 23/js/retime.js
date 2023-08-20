@@ -18,46 +18,46 @@
  * 
  * Enjoy!
  */
-function retime() {
-    const default_options = { dateStyle: "short", timeStyle: "short" }; //Edit me for default config!
-    const timestamps = document.getElementsByTagName("time");
-    for (let i = 0; i < timestamps.length; i++) { //Sadly, I can't just iterate through using a for-in...
-        const elem = timestamps.item(i); //Because I've gotta do this to get the actual item!
-        const date = new Date(elem.getAttribute("datetime"));
-        let options = {
-            ...default_options
-        };
-        if (elem.hasAttribute("datestyle")) {
-            val = elem.getAttribute("datestyle");
-            if (val == "none") {
-                delete options.dateStyle;
-            } else {
-                options["dateStyle"] = val;
-            }
+// function retime() {
+const default_options = { dateStyle: "short", timeStyle: "short" }; //Edit me for default config!
+const timestamps = document.getElementsByTagName("time");
+for (let i = 0; i < timestamps.length; i++) { //Sadly, I can't just iterate through using a for-in...
+    const elem = timestamps.item(i); //Because I've gotta do this to get the actual item!
+    const date = new Date(elem.getAttribute("datetime"));
+    let options = {
+        ...default_options
+    };
+    if (elem.hasAttribute("datestyle")) {
+        val = elem.getAttribute("datestyle");
+        if (val == "none") {
+            delete options.dateStyle;
+        } else {
+            options["dateStyle"] = val;
         }
-        if (elem.hasAttribute("timestyle")) {
-            val = elem.getAttribute("timestyle");
-            if (val == "none") {
-                delete options.timeStyle;
-            } else {
-                options["timeStyle"] = val;
-            }
+    }
+    if (elem.hasAttribute("timestyle")) {
+        val = elem.getAttribute("timestyle");
+        if (val == "none") {
+            delete options.timeStyle;
+        } else {
+            options["timeStyle"] = val;
         }
-        elem.innerHTML = date.toLocaleString(navigator.language, options);
     }
-
-    //automatically mark localization!
-    const timezones = document.getElementsByClassName("timezone");
-    for (let i = 0; i < timezones.length; i++) {
-        const elem = timezones.item(i);
-        //Hi! This sucks!
-        //We mark the user's local time zone to make it clear which one it refers to,
-        //But there's no good way to actually get that directly with vanilla JS,
-        //So I'm stuck doing this kludge-y mess to get the user's timezone code instead.
-        //Thanks, JavaScript! What a good and useful language with many helpful APIs and no dependency problems whatsoever!
-        elem.innerHTML = "(" + new Date().toLocaleTimeString("en-US", {timeZoneName:'short'}).split(' ')[2] + ")";
-    }
+    elem.innerHTML = date.toLocaleString(navigator.language, options);
 }
 
+//automatically mark localization!
+const timezones = document.getElementsByClassName("timezone");
+for (let i = 0; i < timezones.length; i++) {
+    const elem = timezones.item(i);
+    //Hi! This sucks!
+    //We mark the user's local time zone to make it clear which one it refers to,
+    //But there's no good way to actually get that directly with vanilla JS,
+    //So I'm stuck doing this kludge-y mess to get the user's timezone code instead.
+    //Thanks, JavaScript! What a good and useful language with many helpful APIs and no dependency problems whatsoever!
+    elem.innerHTML = "(" + new Date().toLocaleTimeString("en-US", { timeZoneName: 'short' }).split(' ')[2] + ")";
+}
+// }
+
 //run it at the right time, wheeeee
-document.addEventListener("DOMContentLoaded", retime);
+// document.addEventListener("DOMContentLoaded", retime);
